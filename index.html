@@ -898,6 +898,43 @@
             background: linear-gradient(135deg, #000000 0%, #2c3e50 100%);
             z-index: 1;
         }
+        /* QBear Collaboration Section */
+        .qbear-collab {
+            position: relative;
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .qbear-collab a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .qbear-collab a:hover {
+            color: #ffffff;
+        }
+        
+        .qbear-collab a::after {
+            content: "🐻";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .qbear-collab a:hover::after {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -1603,6 +1640,9 @@ Let’s build something meaningful together.<br>
         <div class="copyright">
             <p>&copy; 2025 ARSD College Finance & Investments Cell. All rights reserved.</p>
             <p>Atma Ram Sanatan Dharma College, University of Delhi</p>
+        </div>
+        <div class="qbear-collab">
+            <a href="https://qbearproject.github.io/qbear-project.github.io/" target="_blank">Designed and Managed by - QBear</a>
         </div>
     </footer>
 
