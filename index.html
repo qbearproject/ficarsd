@@ -110,6 +110,7 @@
             text-align: center;
             padding: 0 5%;
             z-index: 2;
+            position: relative;
         }
 
         .hero-content h1 {
@@ -515,7 +516,7 @@
                 height: 100vh;
                 background-color: var(--primary-color);
                 transition: right 0.3s ease;
-                z极: 1001;
+                z-index: 1001;
             }
             
             nav.active {
@@ -529,7 +530,7 @@
                 height: 100%;
             }
             
-            nav ul li {
+极           nav ul li {
                 margin: 1rem 0;
             }
             
@@ -677,7 +678,7 @@
             color: #222;
         }
         
-极       .member-role {
+        .member-role {
             color: var(--accent-color);
             font-weight: 600;
             margin-bottom: 1rem;
@@ -855,6 +856,48 @@
         .gallery-item:hover .gallery-caption {
             transform: translateY(0);
         }
+        
+        /* Floating Team Photo */
+        #about .hero-content img {
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.4),
+                0 8px 24px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateX(5deg) rotateY(-2deg) translateZ(30px);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            margin: 2rem auto;
+            display: block;
+            border: 4px solid white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        #about .hero-content img:hover {
+            transform: perspective(1000px) rotateX(0) rotateY(0) translateZ(50px);
+            box-shadow: 
+                0 35px 60px -15px rgba(0, 0, 0, 0.5),
+                0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Parallax effect */
+        #about .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #about .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #000000 0%, #2c3e50 100%);
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -889,7 +932,7 @@
 
         <section class="about-section">
             <div class="section-header">
-                <h2>ABOUT US</h2>
+                <h2>OUR STORY</h2>
                 <div class="section-divider"></div>
             </div>
             <div class="about-content">
@@ -903,7 +946,7 @@
 
         <!-- Sponsors Section -->
         <section class="sponsors-section">
-            <h2 class="sponsors-title">OUR PARTNERS & SPONSORS</h2>
+            <h2 class="sp极onsors-title">OUR PARTNERS & SPONSORS</h2>
             <div class="sponsors-container">
                 <div class="sponsor-item">
                     <img src="xtcy.jpg" alt="Sponsor 1">
@@ -934,19 +977,10 @@
                 </div>
                 <div class="sponsor-item">
                     <img src="Q (1).jpg" alt="Sponsor 10">
-                </div><!--
-                <div class="sponsor-item">
-                    <img src="https://via.placeholder.com/150?text=Sponsor+11" alt="Sponsor 11">
                 </div>
                 <div class="sponsor-item">
-                    <img src="https://via.placeholder.com/150?text=Sponsor+12" alt="Sponsor 12">
+                    <img src="fresca.jpg" alt="Sponsor 10">
                 </div>
-                <div class="sponsor-item">
-                    <img src="https://via.placeholder.com/150?text=Sponsor+13" alt="Sponsor 13">
-                </div>
-                <div class="sponsor-item">
-                    <img src="https://via.placeholder.com/150?text=Sponsor+14" alt="Sponsor 14">
-                </div>-->
             </div>
         </section>
 
@@ -1019,14 +1053,18 @@
     <div id="about" class="page-container">
         <section class="hero-section" style="height: 60vh;">
             <div class="hero-content">
-                <h1>About Us & Our Team</h1>
+                <h1>Our Team</h1>
+                
                 <p>Meet the minds behind FIC ARSD</p>
+
             </div>
+            
         </section>
+        <img src="team.jpg" alt="Team Image" style="width: 100%; height: auto; border-radius: 10px; margin-top: 1rem;">
 
         <section class="about-section">
             <div class="section-header">
-                <h2>OUR STORY</h2>
+                <h2>WHO ARE WE</h2>
                 <div class="section-divider"></div>
             </div>
             <div class="about-content">
@@ -1062,10 +1100,8 @@ aspirations of the students
                         <p>Commerce Major, 3rd Year</p>
                         <div class="member-social">
                             <a href="https://www.linkedin.com/in/devansh-gupta-185215218/"><i class="fab fa-linkedin"></i></a>
-                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
-                        
                             <a href="devanshharish@gmail.com"><i class="fas fa-envelope"></i></a>
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="team-member">
@@ -1078,7 +1114,6 @@ aspirations of the students
                         <p>Commerce Major, 3rd Year</p>
                         <div class="member-social">
                             <a href="https://www.linkedin.com/in/aanchal-395abb293/"><i class="fab fa-linkedin"></i></a>
-                            <!--<a href="#"><i class="fab fa-twitter"></i></a> -->
                             <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
@@ -1093,7 +1128,6 @@ aspirations of the students
                         <p> Commerce Major, 3rd Year</p>
                         <div class="member-social">
                             <a href="https://www.linkedin.com/in/anant-pratap-singh-du/"><i class="fab fa-linkedin"></i></a>
-                            <!--<a href="#"><i class="fab fa-twitter"></i></a>-->
                             <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
@@ -1108,13 +1142,10 @@ aspirations of the students
                         <p>Commerce Major, 3rd Year</p>
                         <div class="member-social">
                             <a href="https://www.linkedin.com/in/drishti-aggarwal05/"><i class="fab fa-linkedin"></i></a>
-                            <!--<a href="#"><i class="fab fa-twitter"></i></a> -->
                             <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
-                
-                
             </div>
         </section>
 
@@ -1198,7 +1229,7 @@ aspirations of the students
                     <div class="project-info">
                         <h3>EQUITY RESEARCH REPORT - JSW ENERGY</h3>
                         <p>High Capex, Focus on Green Energy</p>
-                    </div>
+                    </极div>
                 </div>
             </div>
         </section>
@@ -1255,10 +1286,7 @@ deeper understanding of the
 industry and learn about the
 latest trends and techniques in
 consultancy.
-
-        
                 </ul>
-                <!--<a href="#" class="cta-button">View Case Studies</a>-->
             </div>
         </section>
         <section class="consulting-section">
@@ -1266,12 +1294,24 @@ consultancy.
                 <h2>PROJECT PARCHAM</h2>
                 <div class="section-divider"></div>
             </div>
+            
             <div class="about-content">
                 <p>Parcham is the Social project Unit of FIC ARSD under which FIC
 undertakes initiatives to spread financial literacy and contribute its
 share to society. The Social Project department of FIC ARSD is its
 initiative corresponding to CSR, working with the intent of "Giving back
 to the society".</p>
+
+                <div class="project-card animated" data-pdf="https://www.instagram.com/project.parcham/">
+                    <div class="project-image-container">
+                        <img src="parcham.jpeg" alt="Data Center Market">
+                    </div>
+                    <div class="project-info">
+                        <h3>THE SOCIAL PROJECT WING</h3>
+                        <p></p>
+                    </div>
+                </div><br>
+                
                 <ul style="text-align: left; max-width: 600px; margin: 2rem auto;">
                     <li><b>MONEY MANTRA SERIES :</b>  </li> <br> With Money-Mantra, we took our mission online,
 breaking down finance into six episodes that made
@@ -1301,12 +1341,7 @@ financial concepts that even adults often find
 challenging. Their curiosity kept us on our toes,
 sparking a lively discussion. Moments like these
 remind us why financial literacy matters
-                    
-
-
-        
                 </ul>
-                <!--<a href="#" class="cta-button">View Case Studies</a>-->
             </div>
         </section>
     </div>
@@ -1370,28 +1405,24 @@ remind us why financial literacy matters
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x200?text=Event+1" alt="Event 1">
-                    <div class="gallery-caption">Investment Workshop 2024</div>
+                    <img src="monetre 24.jpg" alt="Event 1">
+                    <div class="gallery-caption">MONETRE'24</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x200?text=Event+2" alt="Event 2">
-                    <div class="gallery-caption">Finance Conference</div>
+                    <img src="sumit23.jpg" alt="Event 2">
+                    <div class="gallery-caption">SUMMIT'23</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x200?text=Event+3" alt="Event 3">
-                    <div class="gallery-caption">Trading Competition</div>
+                    <img src="kpmg-fic.jpg" alt="Event 3">
+                    <div class="gallery-caption">MENTORSHIP PROGRAMME</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x200?text=Event+4" alt="Event 4">
-                    <div class="gallery-caption">Alumni Talk</div>
+                    <img src="money morph.jpg" alt="Event 4">
+                    <div class="gallery-caption">FINANCE BOOTCAMP</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x200?text=Event+5" alt="Event 5">
-                    <div class="gallery-caption">Case Study Challenge</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x200?text=Event+6" alt="Event 6">
-                    <div class="gallery-caption">Financial Literacy Drive</div>
+                    <img src="sumit 22.jpg" alt="Event 5">
+                    <div class="gallery-caption">SUMMIT'22</div>
                 </div>
             </div>
         </section>
@@ -1410,8 +1441,6 @@ remind us why financial literacy matters
            
             <div class="section-header">
                  We welcome you to reach out to us with your queries, collaboration ideas, or feedback.<br> The Finance and Investment Cell of ARSD is always open to connecting with curious minds,<br> industry professionals, and like-minded organizations.<br>
-
-You can write to us at ficarsd19@gmail.com or follow our latest updates on Instagram (@ficarsd) and <br>LinkedIn (FIC ARSD). If you’re looking to speak with someone from the team directly,<br> feel free to contact Abhishek Tiwari, the President, at +91 8929201929.<br> Our college is located at Dhaula Kuan, New Delhi, and our members are always eager to engage in new ideas, partnerships, <br>and projects that align with our mission of financial empowerment.
 
 Let’s build something meaningful together.<br>
 <br>
@@ -1478,35 +1507,35 @@ Let’s build something meaningful together.<br>
             <div class="archives-grid">
                 <div class="archive-card">
                     <div class="archive-image">
-                        <img src="https://via.placeholder.com/400x250?text=2023-2024" alt="2023-2024">
+                        <img src="Finfluencer.png" alt="2023-2024">
                     </div>
                     <div class="archive-content">
-                        <div class="archive-year">2023-2024</div>
-                        <h3 class="archive-title">Foundation Year</h3>
-                        <p>Our inaugural year with 5 workshops, 2 research papers, and the launch of our consulting division.</p>
-                        <a href="#" class="cta-button" style="padding: 0.5rem 1rem;">Explore</a>
+                        <div class="archive-year">FEB, 2023</div>
+                        <h3 class="archive-title">FINFLUENCERS</h3>
+                        <p>Contributor: Aditya Dhankhar</p>
+                        <a href="https://ficarsd19.wordpress.com/2023/02/16/finfluencers/" class="cta-button" style="padding: 0.5rem 1rem;">Read</a>
                     </div>
                 </div>
                 <div class="archive-card">
                     <div class="archive-image">
-                        <img src="https://via.placeholder.com/400x250?text=2024-2025" alt="2024-2025">
+                        <img src="policy fomulation.jpg" alt="2024-2025">
                     </div>
                     <div class="archive-content">
-                        <div class="archive-year">2024-2025</div>
-                        <h3 class="archive-title">Expansion Phase</h3>
-                        <p>Hosted our first summit, published 8 research papers, and established industry partnerships.</p>
-                        <a href="#" class="cta-button" style="padding: 0.5rem 1rem;">Explore</a>
+                        <div class="archive-year">FEB, 2023</div>
+                        <h3 class="archive-title">POLICY FORMULATION IN FINANCE</h3>
+                        <p>Contributor: Neeraj Kushwaha</p>
+                        <a href="https://ficarsd19.wordpress.com/2023/02/16/policy-formulation-in-finance/" class="cta-button" style="padding: 0.5rem 1rem;">Read</a>
                     </div>
                 </div>
                 <div class="archive-card">
                     <div class="archive-image">
-                        <img src="https://via.placeholder.com/400x250?text=Publications" alt="Publications">
+                        <img src="ftx.png" alt="Publications">
                     </div>
                     <div class="archive-content">
-                        <div class="archive-year">Research</div>
-                        <h3 class="archive-title">Publications Archive</h3>
-                        <p>Complete collection of all research papers, market analyses, and case studies published by FIC.</p>
-                        <a href="#" class="cta-button" style="padding: 0.5rem 1rem;">Explore</a>
+                        <div class="archive-year">Mar, 2023</div>
+                        <h3 class="archive-title">FTX COLLAPSE: HOW IT UNFOLDED</h3>
+                        <p>Contributors: Ayush Yadav, Vansh Dudani</p>
+                        <a href="https://ficarsd19.wordpress.com/2022/12/05/__trashed/" class="cta-button" style="padding: 0.5rem 1rem;">Read</a>
                     </div>
                 </div>
             </div>
@@ -1520,21 +1549,21 @@ Let’s build something meaningful together.<br>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="https://via.placeholder.com/400x250?text=Q1+2024" alt="Q1 2024">
+                        <img src="finception july.jpg" alt="Q1 2024">
                     </div>
                     <div class="project-info">
-                        <h3>Quarterly Digest - Q1 2024</h3>
-                        <p>Market trends, event recaps, and member spotlights</p>
+                        <h3>FINCEPTION</h3>
+                        <p>JULY EDITION</p>
                         <a href="#" class="cta-button" style="padding: 0.5rem 1rem;">Download</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="https://via.placeholder.com/400x250?text=Q4+2023" alt="Q4 2023">
+                        <img src="finception dec.jpg" alt="Q4 2023">
                     </div>
                     <div class="project-info">
-                        <h3>Quarterly Digest - Q4 2023</h3>
-                        <p>Year in review and financial forecasts</p>
+                        <h3>FINCEPTION</h3>
+                        <p>DECEMBER EDITION</p>
                         <a href="#" class="cta-button" style="padding: 0.5rem 1rem;">Download</a>
                     </div>
                 </div>
@@ -1549,15 +1578,19 @@ Let’s build something meaningful together.<br>
                 <img src="arsd-college-logo-png_seeklogo-458089.png" alt="ARSD FIC Logo">
             </div>
             <div class="social-links">
-                <a href="https://instagram.com/ficarsd" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                    <span class="social-text">@ficarsd</span>
-                </a>
-                <a href="https://linkedin.com/company/fic-arsd" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    <span class="social-text">@fic-arsd</span>
-                </a>
-            </div>
+    <a href="https://instagram.com/ficarsd" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <span class="social-text">@ficarsd</span>
+    </a>
+    <a href="https://linkedin.com/company/fic-arsd" target="_blank">
+        <i class="fab fa-linkedin"></i>
+        <span class="social-text">@fic-arsd</span>
+    </a>
+    <a href="https://open.spotify.com/show/0o3f4G8SFqz1g5S59zJxUu?si=b7cebdae61e3466e" target="_blank">
+        <i class="fab fa-spotify"></i>
+        <span class="social-text">Cents & Sense</span>
+    </a>
+</div>
             <div class="footer-links">
                 <a href="#" class="nav-link" data-page="home">Home</a>
                 <a href="#" class="nav-link" data-page="about">About</a>
